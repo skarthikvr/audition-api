@@ -1,8 +1,9 @@
 spring:
-  application:
-    name: audition-api
+  #  application:
+  #    name: application
   config:
-    import: "optional:configserver:"
+    #    import: "optional:configserver:http://localhost:8888/"
+    import: "configserver:http://localhost:8888/"
   main:
     allow-bean-definition-overriding: true
   autoconfigure:
@@ -13,6 +14,10 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
+#  security:
+#    user:
+#      name: admin
+#      password: "{bcrypt}$2a$10$bgUqwP19c/adqHPzC17KWeiqIgjrzA33QAzBC9u/cghh8YH.FrDsu"
 server:
   max-http-request-header-size: 16KB
 management:
@@ -22,7 +27,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: '*' #TODO enable only info and health for security purposes. Consider that we may want to still access other actuator endpoints securely.
+        include: '*'
 logging:
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
