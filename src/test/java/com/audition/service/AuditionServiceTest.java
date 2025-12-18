@@ -34,7 +34,7 @@ class AuditionServiceTest {
     }
 
     @Test
-    void getPostsDelegatesToIntegrationClient() {
+    void testPostsDelegatesToIntegrationClient() {
         final var posts = List.of(new AuditionPost());
         when(mockClient.getPosts()).thenReturn(posts);
 
@@ -45,7 +45,7 @@ class AuditionServiceTest {
     }
 
     @Test
-    void getPostByIdDelegatesToIntegrationClient() {
+    void testPostByIdDelegatesToIntegrationClient() {
         final var post = new AuditionPost();
         when(mockClient.getPostById("1")).thenReturn(post);
 
@@ -56,7 +56,7 @@ class AuditionServiceTest {
     }
 
     @Test
-    void getCommentsByPostIdDelegatesToIntegrationClient() {
+    void testCommentsByPostIdDelegatesToIntegrationClient() {
         final var comments = List.of(new Comment());
         when(mockClient.getCommentsByPostId("1")).thenReturn(comments);
 
@@ -67,7 +67,7 @@ class AuditionServiceTest {
     }
 
     @Test
-    void getCommentsForPost_delegatesToIntegrationClient() {
+    void testCommentsForPostDelegatesToIntegrationClient() {
         final var comments = List.of(new Comment());
         when(mockClient.getCommentsForPost("1")).thenReturn(comments);
 

@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -47,7 +48,8 @@ class AuditionClientHttpRequestInterceptorBehaviorTest {
 
     @Test
     @SuppressWarnings("resource")
-    void intercept_usesAuditLogger_toLog() throws Exception {
+    @SneakyThrows
+    void interceptUsesAuditLoggerToLog() {
         when(mockResponse.getBody()).thenReturn(new ByteArrayInputStream("hello".getBytes(StandardCharsets.UTF_8)));
         when(mockResponse.getHeaders()).thenReturn(new HttpHeaders());
         when(mockResponse.getStatusCode()).thenReturn(HttpStatus.OK);

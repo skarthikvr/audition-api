@@ -37,7 +37,7 @@ class ExceptionControllerAdviceTest {
     }
 
     @Test
-    void handleSystemException_withValidStatus_returnsProblemDetailWithTitle() {
+    void handleSystemExceptionWithValidStatusReturnsProblemDetailWithTitle() {
         final SystemException ex = new SystemException("detail", "MyTitle", 400);
 
         final ProblemDetail pd = advice.handleSystemException(ex);
@@ -48,7 +48,7 @@ class ExceptionControllerAdviceTest {
     }
 
     @Test
-    void handleSystemException_withInvalidStatus_returnsInternalServerErrorAndLogs() {
+    void handleSystemExceptionWithInvalidStatusReturnsInternalServerErrorAndLogs() {
         final SystemException ex = new SystemException("detail", "Title", 9999);
 
         final ProblemDetail pd = advice.handleSystemException(ex);
@@ -57,7 +57,7 @@ class ExceptionControllerAdviceTest {
     }
 
     @Test
-    void handleMainException_withHttpClientErrorException_returnsStatusFromException() {
+    void handleMainExceptionWithHttpClientErrorExceptionReturnsStatusFromException() {
         final HttpClientErrorException clientEx = new HttpClientErrorException(
             org.springframework.http.HttpStatus.NOT_FOUND, "Not Found");
 

@@ -136,7 +136,7 @@ public class AuditionIntegrationClient {
      */
     public List<Comment> getCommentsForPost(final String postId) {
         // The response from the upstream service
-        ResponseEntity<List<Comment>> response = null;//NOPMD
+        ResponseEntity<List<Comment>> response = null; //NOPMD
         try {
             final String url = UriComponentsBuilder.fromUriString(baseUrl)
                 .path("comments")

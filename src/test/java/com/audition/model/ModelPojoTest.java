@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 class ModelPojoTest {
 
     @Test
-    void auditionPost_gettersSetters() {
+    void auditionPostGettersSetters() {
         final AuditionPost p = new AuditionPost();
         p.setId(10);
         p.setUserId(5);
@@ -21,7 +21,7 @@ class ModelPojoTest {
     }
 
     @Test
-    void comment_gettersSetters() {
+    void commentGettersSetters() {
         final Comment c = new Comment();
         c.setId(2);
         c.setPostId(10);
